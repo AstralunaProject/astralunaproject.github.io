@@ -1,15 +1,7 @@
-# astralunaproject.github.io
+# 星月 astralunaproject.github.io
 
-Landing page for the projects published on GitHub Pages under this account, and the domain root that serves `robots.txt` and the sitemap index for all of them.
+My corner of the internet: **[astralunaproject.github.io](https://astralunaproject.github.io/)**
 
-## Adding a project
+Every project I've shipped, with real screenshots, a night sky, falling sakura petals and Frieren reacting to my life choices. Hand-written HTML and CSS, no framework, because a list of links does not need a build step.
 
-1. Publish the project with GitHub Pages and give it its own `sitemap.xml`.
-2. Add a card to `index.html`.
-3. Add its sitemap to `sitemap.xml`:
-
-   ```xml
-   <sitemap><loc>https://astralunaproject.github.io/NAME/sitemap.xml</loc></sitemap>
-   ```
-
-The Search Console property for `https://astralunaproject.github.io/` covers every project path, so nothing else is needed there.
+Frieren clips come from Tenor; the fonts (Zen Maru Gothic and Shippori Mincho) are under the SIL Open Font License, see [`fonts/`](fonts).
