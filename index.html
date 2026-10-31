@@ -70,7 +70,7 @@
       user-select: none;
     }
 
-    header h1 { margin: 0; font-size: clamp(2.4rem, 6vw, 3.6rem); line-height: 1.05; color: var(--star); font-weight: 700; }
+    header h1 { margin: 0; font-size: clamp(2.2rem, 5vw, 3.1rem); line-height: 1.05; color: var(--star); font-weight: 700; }
     header p { margin: 14px 0 0; max-width: 34em; color: var(--haze); font-size: 1.15rem; }
 
     h2 { margin: 64px 0 4px; font-size: 1.35rem; color: var(--star); }
@@ -92,11 +92,25 @@
     footer { grid-column: 2; color: var(--haze); }
     footer p { margin: 0; }
 
+    .scene { margin: 0; }
+    .scene video { display: block; width: 100%; height: auto; border-radius: 3px; background: var(--dusk); }
+    .scene figcaption { margin-top: 6px; font-size: 0.92rem; color: var(--haze); font-style: italic; }
+
+    header { display: grid; grid-template-columns: 1fr 210px; gap: 28px; align-items: center; }
+    .hello { margin: 0 0 6px; color: var(--sakura); font-size: 1.1rem; }
+    .section-head { display: grid; grid-template-columns: 1fr 220px; gap: 28px; align-items: center; margin-top: 72px; }
+    .section-head h2 { margin-top: 0; }
+    .aside-joke { color: var(--haze); }
+    footer { display: grid; grid-template-columns: 200px 1fr; gap: 24px; align-items: center; }
+
     @media (max-width: 720px) {
       .page { grid-template-columns: 1fr; }
       .mark { writing-mode: horizontal-tb; position: static; font-size: 3.5rem; }
       .work { grid-template-columns: 1fr; gap: 14px; }
-      footer { grid-column: 1; }
+      footer { grid-column: 1; grid-template-columns: 140px 1fr; }
+      header, .section-head { grid-template-columns: 1fr; }
+      header .scene { max-width: 260px; }
+      .section-head .scene { max-width: 320px; }
     }
   </style>
 </head>
@@ -105,18 +119,37 @@
     <p class="mark" lang="ja" aria-hidden="true">星月</p>
     <main>
       <header>
-        <h1>Overwind's projects</h1>
-        <p>I write code for pretty much anything that compiles. Most of what ends up here runs in your browser and reads your files on your own machine, so there is nothing to sign up for and nothing to upload.</p>
+        <div>
+          <p class="hello" lang="ja">こんにちは!</p>
+          <h1>Overwind's projects</h1>
+          <p>I write code for pretty much anything that compiles, and apparently for Brazilian payroll law too. Specialization is for people with fewer browser tabs open.</p>
+          <p>Most of what lives here runs in your browser and reads your files on your own machine. No account, no upload, no "we value your privacy" banner, because there is nothing to value.</p>
+        </div>
+        <figure class="scene">
+          <video autoplay muted loop playsinline width="498" height="498" aria-label="Frieren smiling smugly"
+            src="https://media.tenor.com/bV0lIld5m2YAAAPo/smug-frieren.mp4"></video>
+          <figcaption>me when the tests pass on the first run (they didn't)</figcaption>
+        </figure>
       </header>
 
-      <h2>In the browser</h2>
-      <p class="aside">Open the page, drop a file, done. Each one works offline after the first visit.</p>
+      <div class="section-head">
+        <div>
+          <h2>In the browser</h2>
+          <p class="aside">Open the page, drop a file, done. Each one keeps working offline after the first visit.</p>
+        </div>
+        <figure class="scene">
+          <video autoplay muted loop playsinline width="501" height="282" aria-label="Frieren diving head first into a mimic chest"
+            src="https://media.tenor.com/h6XlgMwYBnkAAAPo/frieren-sousou-no-frieren.mp4"></video>
+          <figcaption>me opening a PR titled "small fix"</figcaption>
+        </figure>
+      </div>
 
       <article class="work">
         <img src="nokudos/docs/screenshot.png" alt="nokudos showing a year of routes as a heatmap with distance and time totals" width="1200" height="1000" loading="lazy">
         <div>
           <h3>nokudos</h3>
-          <p>Turns a Strava or Garmin data export into a year in review: every route drawn on one map, totals, personal bests from the GPS tracks, and a card to post.</p>
+          <p>Turns a Strava or Garmin data export into a year in review: every route on one map, totals, personal bests from the GPS tracks and a card to post.</p>
+          <p class="aside-joke">Strava wanted a subscription for this. I wanted a weekend project.</p>
           <p class="links"><a href="nokudos/">Open nokudos</a><a href="https://github.com/AstralunaProject/nokudos">Source</a></p>
         </div>
       </article>
@@ -125,7 +158,8 @@
         <img src="readrecap/docs/screenshot.png" alt="readrecap listing the books finished in a year, with hours read and a reading calendar" width="1200" height="1000" loading="lazy">
         <div>
           <h3>readrecap</h3>
-          <p>Reads the stats database of a Kobo or of KOReader and tells you what your reading year looked like: books finished, hours, streaks, the time of day you read.</p>
+          <p>Reads the stats database of a Kobo or of KOReader and shows your reading year: books finished, hours, streaks, the time of day you read.</p>
+          <p class="aside-joke">Also confirms that you started 31 books and finished 4.</p>
           <p class="links"><a href="readrecap/">Open readrecap</a><a href="https://github.com/AstralunaProject/readrecap">Source</a></p>
         </div>
       </article>
@@ -135,6 +169,7 @@
         <div>
           <h3>Calculadora de rescisão CLT</h3>
           <p>Quanto você recebe ao sair do emprego, em todas as modalidades e no contrato de experiência, já com INSS e IRRF de 2026. Nenhum dado sai do navegador.</p>
+          <p class="aside-joke">Para conferir o TRCT antes de assinar, não depois.</p>
           <p class="links"><a href="calculadora-rescisao-clt/">Abrir a calculadora</a><a href="https://github.com/AstralunaProject/calculadora-rescisao-clt">Código</a></p>
         </div>
       </article>
@@ -143,12 +178,23 @@
         <img src="shots/cnpj-alfa-scan.png" alt="cnpj-alfa-scan listing the lines of a code sample that break with alphanumeric CNPJ" width="1200" height="1000" loading="lazy">
         <div>
           <h3>cnpj-alfa-scan</h3>
-          <p>Brazil's CNPJ gets letters in July 2026, and a lot of code still stores it as a number. This finds the <code>BIGINT</code> columns, <code>parseInt</code> calls and <code>\d{14}</code> checks before they break.</p>
+          <p>Brazil's CNPJ gets letters in July 2026, and a lot of code still stores it as a number. This finds the <code>BIGINT</code> columns, <code>parseInt</code> calls and <code>\d{14}</code> checks first.</p>
+          <p class="aside-joke">Cheaper than finding out in production.</p>
           <p class="links"><a href="cnpj-alfa-scan/">Scan in the browser</a><a href="https://github.com/AstralunaProject/cnpj-alfa-scan">Source</a></p>
         </div>
       </article>
 
-      <h2>Libraries and servers</h2>
+      <div class="section-head">
+        <div>
+          <h2>Libraries and servers</h2>
+          <p class="aside">For when the problem is yours and the server is too.</p>
+        </div>
+        <figure class="scene">
+          <video autoplay muted loop playsinline width="400" height="360" aria-label="Frieren reading a book by a campfire"
+            src="https://media.tenor.com/SoEwkNSZshYAAAPo/anime-frieren.mp4"></video>
+          <figcaption>reading the 200-page eSocial manual so you don't have to</figcaption>
+        </figure>
+      </div>
       <ul class="libs">
         <li><strong>esocial-ts</strong> builds, validates, signs and sends eSocial events from Node.js, with the A1 certificate kept on your machine. <a href="https://github.com/AstralunaProject/esocial-ts">Source</a>, <a href="https://www.npmjs.com/package/esocial-ts">npm</a></li>
         <li><strong>open-servicedesk</strong> is an IT helpdesk for small companies: tickets, SLAs, email and an asset inventory on your own server. <a href="https://github.com/AstralunaProject/open-servicedesk">Source</a></li>
@@ -156,8 +202,17 @@
       </ul>
     </main>
     <footer>
-      <p>The rest of the mess is on <a href="https://github.com/AstralunaProject">GitHub</a>.</p>
+      <figure class="scene">
+        <video autoplay muted loop playsinline width="498" height="324" aria-label="Frieren asleep, rolled up in a sleeping bag"
+          src="https://media.tenor.com/VXMtgC9hpGwAAAPo/frieren-sleep.mp4"></video>
+      </figure>
+      <p>Sleep schedule: deprecated. The rest of the mess is on <a href="https://github.com/AstralunaProject">GitHub</a>.</p>
     </footer>
   </div>
+  <script>
+    if (matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      for (const video of document.querySelectorAll("video")) { video.removeAttribute("autoplay"); video.pause(); }
+    }
+  </script>
 </body>
 </html>
